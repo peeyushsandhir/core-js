@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break & continue</title>
+</head>
+<body>
+    <script>
+        for(i=0; i<=9; i++){
+            if(i==6){
+                break;
+            }
+            document.write(i+'<br>')
+        }
+        document.write('--------<br>');
+
+        for(i=0; i<=10; i++){
+            if(i == 5){
+                continue;
+            }
+            document.write(i+'<br>');
+        }
+        document.write('------------<br>');
+        let j = 0;
+        while(true){
+            if(j == 3){
+                break;
+            }
+            document.write(j+'<br>');
+            j++
+        }
+        document.write('------------<br>');
+       
+        
+    </script>
+</body>
+</html>

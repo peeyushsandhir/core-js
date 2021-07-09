@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arguments object</title>
+</head>
+<body>
+    <h3>arguments.length shows no. of arguments not parameters</h3>
+    <script>
+        function disp(a,b,c){
+            // document.write(a);
+            arguments[2] = 'javaScript';
+            document.write(arguments[0]);
+            document.write(arguments[2]);
+            document.write('<br>' + arguments.length);
+        }
+        disp('hello ','dear ','world');
+    </script>
+</body>
+</html>
