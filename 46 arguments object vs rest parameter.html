@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arguments object vs rest parameter</title>
+</head>
+<body>
+    <ul>
+        three main differences:- 
+        <li>rest: only those which are not given seprate name<br>
+            arguments object: it contains all the arguments</li>
+        <li>rest: these are array instances.<br> 
+            sort/map/forEach/pop can be applied<br>
+            arguments object these are not real array</li>
+        <li>arguments object has additional property:<br>
+            i.e. callee</li>
+    </ul>
+    <script>
+        // rest parameters
+        function restShow(a,...args){
+            console.log('a: '+a);
+            console.log(args);
+        }
+        restShow(10,20,30,40,50);
+
+        // arguments object
+        function argShow(a){
+            console.log('a: '+a);
+            console.log(arguments);
+        }
+        argShow(10,20,30,40,50);
+    </script>
+</body>
+</html>

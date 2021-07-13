@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable scope</title>
+</head>
+<body>
+    <pre>JS has two scopes:- 
+        - Global
+        - Local
+
+            Global:-
+            variable declared outside function.
+            it's value is accessible/modifiable throughout the program.
+            these are availble to new pages loaded in the same browser window.
+
+            Local:-
+            variable declared inside function.
+            gets created & destroyed every time function is executed.
+            can't be accessed outside function.
+            NOTE:- if inside function a variable is not declared with "var", 
+                it is treated as global variable.
+
+            Local:- 
+            if a function within a function, inner function can access
+            outer function's variables but outer function can't access
+            inner function's variables.
+            ---------------- SCRIPT ---------------
+    </pre>
+    <script>
+        // GLOBAL VARIABLE
+        var i = 'I am global vaiable <br>';  // globa variable
+        function globalShow(){
+            document.write(i);   // inside function
+        }
+        globalShow();
+        document.write(i);       // outside function
+
+        function globalDisp(){
+            document.write(i);   // other function
+        }
+        globalDisp();
+
+        if(true){
+            document.write(i);   // inside block
+        }
+
+
+        // LOCAL VARIABLE
+        function localShow(){
+            var j = 'I am local variable <br>'; // local variable
+            k = 'k is globla because not initiated with var<br>'
+            document.write(j);
+            document.write(k);
+        }
+        localShow();
+        // document.write(j);  outside function not accessible
+        document.write(k)
+
+        // function within function (Nested Function / Closure)
+// function arguments(parameters) work as local variables inside function
+        function demo(){
+            var x = 'x from outer fuction <br>';
+            document.write(x);
+
+            function innerDemo(){
+                var y = 'y from inner function <br>';
+                z = 'z is global from inner function <br>';
+                document.write(y);
+                document.write(x);
+            }
+            innerDemo();
+            document.write(z)
+            // document.write(y);   error: k is not defined
+        }
+        demo();
+
+    </script>
+
+</body>
+</html>
