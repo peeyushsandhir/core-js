@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>block scope</title>
+</head>
+<body>
+    <script>
+        if(true){
+            var i = 10; // global variable
+            // "let" & "const" give block level scope
+            let j = 20; // local variable
+            const k = 30; // local variable
+            document.write(i+' '+j+' '+k+'<br>');
+        }
+        document.write(i);
+        // document.write(j);   // j is not defined
+        // document.write(k);   // k is not defined
+
+    </script>
+</body>
+</html>

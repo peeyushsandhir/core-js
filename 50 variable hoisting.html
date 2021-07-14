@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable Hoisting</title>
+</head>
+<body>
+    <pre>
+        Hoisting: JS's default behaviour to move declaration 
+        to the top of the function if defined in a function
+        or 
+        top of the global context, if outside function.
+    </pre>
+    <script>
+        var a = 10; 
+        c = 30;
+        document.write(a+' '+b+' '+c+'<br>');
+        var b = 20;
+        document.write(a+' '+b+' '+c+'<br>');
+        var c;
+
+        function show(){
+            document.write(a);  // undefined
+            var a = 50;
+            document.write(a);  // 50
+        }
+        show();
+        /* 
+            var a;
+            var b;
+            a = 10;
+        document.write(a+' '+b+'<br>');
+            b = 20;
+        document.write(a+' '+b+'<br>');
+         */
+
+    </script>
+    <br>
+    <img src="images/50 varaible hoisting.jpg">
+    <img src="images/50 variable hoisting 2.jpg" style="float: right;">
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE</title>
+</head>
+<body>
+    <h1>IIFE:  Self Executing Anonymous Function</h1>
+    <h2>runs as soon as it is defined</h2>
+    <h2>it avoids Global variables & function.. i.e.<br>
+        scope of variables is limited to function only</h2>
+    <script>
+        (function(){document.write('GeekyShows<br>');})();
+
+        // variable scope
+        (function(){
+            let a = 10;
+            document.write(a+'<br>');
+        })();
+        // document.write(a); // a is not accessible
+
+        // parameters
+        (function(a,b){
+            document.write(a,b);
+        })(10,20);
+    </script>
+
+</body>
+</html>

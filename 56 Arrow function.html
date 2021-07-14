@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+</head>
+<body>
+    <h1>Arrow funciton is always Anoymous</h1>
+    <h2>Arrow function doesn't support Hoisting</h2>
+    <script>
+        // Arrow function
+        // myfun3();    // hoisting not supported
+        let fun1 = () => document.write('GeekyShows<br>');
+        fun1();
+
+        let fun2 = a => a+'GeekyShows<br>';
+        document.write(fun2('Hello '));
+
+        let fun3 = (a,b) => {
+            return a+b;
+        };
+        document.write('Hello','GeekyShows<br>');
+
+        // Arrow with rest Parameters
+        let fun4 = (a, ...args) => {
+            document.write(a+' '+ args);
+        }
+        fun4(10,20,30,40);
+    </script>
+</body>
+</html>
