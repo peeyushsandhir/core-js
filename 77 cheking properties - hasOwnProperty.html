@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hasOwnProperty</title>
+</head>
+<body>
+    <script>
+        function Mobile() {
+            this.model = '22010';
+            this.price = '1000';
+            // this.memory = '8gb';
+        }
+        let nokia = new Mobile();
+        let lenovo = new Mobile();
+
+        // if(nokia.hasOwnProperty('memeory')){
+        //     document.write('yes')
+        // }
+        // else{
+        //     document.write('no');
+        // }
+document.write('<br>');
+        let x = function(i,k){
+            if(i.hasOwnProperty(k)){
+                document.write('yes<br>');
+            }
+            else{
+                document.write('no<br>')
+            }
+        }
+        x(nokia,'price');
+        x(nokia,'memory');
+        x(lenovo,'model');
+        x(lenovo,'memory');
+    </script>
+</body>
+</html>

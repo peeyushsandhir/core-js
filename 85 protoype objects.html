@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype objects</title>
+</head>
+<body>
+    <h1 style="color:firebrick;">we use prototype to achieve inheritance in JS</h1>
+    <script>
+        // it will return Object.prototype object
+        console.log(Object.prototype);
+
+        let b = {};
+        let r = Object.getPrototypeOf(b);
+        console.log(r);// Object.prototype (same as 13)
+        console.log(Object.getPrototypeOf(r)); // null
+        
+        let b1 = new Object();
+        let r1 = Object.getPrototypeOf(b1);
+        console.log(r1);
+        console.log(Object.getPrototypeOf(r1));
+
+        let b2 = new Array();
+        let r2 = Object.getPrototypeOf(b2); // Array.prototype
+        console.log(r2);
+        console.log(Object.getPrototypeOf(r2));// Object.prototype (same as 13)
+        console.log(Object.getPrototypeOf(Object.getPrototypeOf(r2)));// null
+        
+        let b3 = new String();
+        let r3 = Object.getPrototypeOf(b3); // String.prototype
+        console.log(String.prototype); // String.prototype (same as 32)
+        console.log(r3);
+        console.log(Object.getPrototypeOf(r3)); // Object.prototype (same as 13)
+        console.log(Object.getPrototypeOf(Object.getPrototypeOf(r3))); // null
+
+    </script>
+    <img src="images/85 prototype object.jpg">
+</body>
+</html>

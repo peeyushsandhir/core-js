@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>private properties/methods</title>
+</head>
+<body>
+    <script>
+        let Mobile = function(model_no, cost){
+            this.model = model_no;
+            var color = 'white';
+            var margin = 3000;
+            var CP = cost;
+            this.SP = function(){
+                return (this.margin + this.CP);
+            };
+            this.data = () => {
+                document.write('Model No: '+this.model+'<br>'+'MRP: '+this.SP()+'<br>');
+            };
+        }
+        let s = new Mobile('galaxy', 2000);
+        let l = new Mobile('lenovo', 4000);
+        console.log(s.color)
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor function</title>
+</head>
+<body>
+    <h2>constructor function is "CLASS"</h2>
+    <h3>when constructor function is assigned to a varaible & <br>
+        is made anonymous;<br>
+        it is called "CLASS"
+    </h3>
+    <script>
+        /* function Mobile(){
+            this.model = '3310';
+            this.price = () => 'price Rs. 2000';
+        }
+        let s = new Mobile();
+        console.log(s.model,s.price()); */
+
+        function Mobile(model_no, cmp){
+            this.model = model_no;
+            this.price = () => 'Price Rs. '+cmp;
+        }
+        let s = new Mobile('galaxy',5000);
+        let l = new Mobile('lenovo',3000);
+        console.log(s.model, s.price());
+        console.log(l.model, l.price());
+
+
+    </script>
+    <img src="images/76 constructor function.jpg">
+</body>
+</html>

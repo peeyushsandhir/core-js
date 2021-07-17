@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.keys</title>
+</head>
+<body>
+    <script>
+        function Mobile(model_no){
+            this.model = model_no;
+            this.color = 'white';
+            this.ram = '4 gb';
+            this.price = () =>{
+                document.write(this.model+"price Rs. 3000")
+            };
+        }
+        let nokia = new Mobile('3310');
+        let l = new Mobile('lenovo');
+
+        document.write(Object.keys(nokia));
+    </script>
+</body>
+</html>

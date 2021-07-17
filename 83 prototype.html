@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    <script>
+        var Mobile = function(mdl){
+            // instance members
+            this.model = mdl;
+            this.price = 3000;
+        };
+        var s = new Mobile('galaxy');
+        var n = new Mobile('nokia');
+        s.color = 'white';  // color available to s only
+        console.log(s); //model, price, color
+        console.log(n); //model, price
+
+        // PROTOTYPE member
+        // className.prototype.key = value;
+        Mobile.prototype.feature = 'smart phone';
+
+    </script>
+</body>
+</html>

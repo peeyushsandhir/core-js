@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor as a class</title>
+</head>
+<body>
+    <h2>this creates public properties/methods</h2>
+    <h2>var/let/const creates private properties/methods</h2>
+    <h2>N.B.:  <br>
+        var let const have different scpes ****</h2>
+    <script>
+        let Mobile = function(model_no, cost){
+            this.model = model_no;
+            this.color = 'white';
+            this.margin = 3000;
+            this.CP = cost;
+            this.SP = function(){
+                return (this.margin + this.CP);
+            };
+            this.data = () => {
+                document.write('Model No: '+this.model+'<br>'+'MRP: '+this.SP()+'<br>');
+            };
+        }
+        let s = new Mobile('galaxy', 2000);
+        let l = new Mobile('lenovo', 4000);
+        s.data();
+        l.data();
+    </script>
+    <img src="images/80 class constructor.jpg" style="float: right;">
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accessing private properties / methods</title>
+</head>
+<body>
+    <script>
+        var Mobile = function(model_no, margin){
+            this.model = model_no;
+            this.color = 'white';
+            var cp = 2000;
+            var sp = function(){return cp+margin};
+            this.data = function(){return this.model+' '+sp()};
+        }
+        let s = new Mobile('galaxy',3000);
+        console.log(s.model);
+        console.log(s.color);
+        console.log(s.data());
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deleting property / method</title>
+</head>
+<body>
+    <script>
+        let fees = {
+            rahul: 100,
+            sumit: 200,
+            total: () => 100+200,
+        }
+        console.log(fees);
+        delete fees.rahul;
+        console.log(fees);
+
+    </script>
+</body>
+</html>

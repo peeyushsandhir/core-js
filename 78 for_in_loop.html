@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for_in_loop</title>
+</head>
+<body>
+    <h2>used to loop through all the "keys" in object</h2>
+    <h2>
+        <ul>for - in can access/manipulate both:
+            <li>instance members</li>
+            <li>prototype members</li>
+        </ul>
+        Object.keys can display only instance members
+    </h2>
+    <script>
+        function Mobile(model_no){
+            this.model = model_no;
+            this.color = 'white';
+            this.ram = '4 gb';
+            this.price = () =>{
+                document.write(this.model+"price Rs. 3000")
+            };
+        }
+        let nokia = new Mobile('3310');
+        let l = new Mobile('lenovo');
+
+        for(var specs in nokia){
+            document.write(nokia[specs]+'<br>')
+        }
+        // to display key: value pair & to hide  function 
+        for(specs in nokia){
+            if(typeof nokia[specs] !== 'function'){
+                document.write(specs+': '+nokia[specs]+'<br>');
+            }
+            else{
+                document.write(specs+': function')
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checking properties of an object</title>
+</head>
+<body>
+    <script>
+        function Mobile() {
+            this.model = '22010';
+            this.price = '1000';
+            // this.memory = '8gb';
+        }
+        let nokia = new Mobile();
+        let lenovo = new Mobile();
+        // typeof operator
+        console.log(typeof nokia.model !== 'undefined');
+        console.log(typeof nokia.memory !== 'undefined');
+
+        // if(typeof nokia.model !== 'undefined'){
+        //     document.write('exists');
+        // }
+        // else{
+        //     document.write('doesnot');
+        // }
+
+    //    WHAT'S PROBLEM WITH THIS CODE 
+       /*  let abc = function (i,k) {
+            if(typeof i.k !== 'undefined'){
+                document.write('yes');
+            }
+            else{
+                document.write('no');
+            }            
+        }
+        abc(nokia, 'memory'); 
+        // abc('lenovo','thankyou'); 
+        */
+    </script>
+</body>
+</html>

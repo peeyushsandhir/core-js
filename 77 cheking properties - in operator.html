@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>in operator</title>
+</head>
+<body>
+    <script>
+        function Mobile() {
+            this.model = '22010';
+            this.price = '1000';
+            // this.memory = '8gb';
+        }
+        let nokia = new Mobile();
+        let lenovo = new Mobile();
+
+        if('memory' in nokia){
+            document.write('exists');
+        }
+        else{
+            document.write('doesnot');
+        }
+document.write('<br>')
+        console.log('model' in nokia);  // true
+        console.log('memory' in nokia); // false
+
+        // /WHAT'S WRONG HERE 
+        let x = function (i,k) {
+            if(k in i){
+                document.write('exists');
+            }
+            else{
+                document.write('doesnot');
+            }
+        }
+        x(nokia,'memory')
+    </script>
+</body>
+</html>
