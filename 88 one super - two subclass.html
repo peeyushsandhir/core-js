@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>one super & two subclass</title>
+</head>
+<body>
+    <script>
+        let doInherit = function(c,p){
+            c.prototype = Object.create(p.prototype);
+            c.prototype.constructor = c;
+        }
+        /* --------------------------- */
+
+        let Mobile = function(color){
+            this.color = color;
+        } // Mobile constructor class
+        Mobile.prototype.getModel = function(){ //
+            return this.model;
+        }
+        Mobile.prototype.getColor = function(){
+            return this.color;
+        }
+
+        let Samsung = function(model,price,color){
+            Mobile.call(this, color);
+            this.model = model;
+            this.price = price;
+        };
+        let Lenovo = function(model,color){
+            Mobile.call(this, color)
+            this.model = model;
+        }
+        /* Samsung.prototype = Object.create(Mobile.prototype);
+        Samsung.prototype.constructor = Samsung;
+        Lenovo.prototype = Object.create(Mobile.prototype);
+        Lenovo.prototype.constructor = Lenovo; */
+        doInherit(Samsung, Mobile);
+        doInherit(Lenovo,Mobile)
+
+        Samsung.prototype.getPrice = function(){
+            return this.price;
+        };
+
+        let s = new Samsung('galaxy',3000,'white');
+        let l = new Lenovo('tablet','black')
+        console.log(s.getModel(), s.getPrice());
+        console.log(l.getModel());
+        console.log( l.getColor(), l.color);
+
+        console.log(s.getColor(), s.color);
+    </script>
+</body>
+</html>

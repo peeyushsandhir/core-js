@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype inheritance</title>
+</head>
+<body>
+    <script>
+        // function Mobile(){ } constructor function
+        var Mobile = function(){    // class as constructor
+            this.a = 10;
+        }
+        Mobile.prototype.z = 100;
+        let lg = new Mobile();
+        /* ----------------------------------- */
+        console.log(Mobile.prototype);//Mobile.prototype
+        console.log(Mobile.prototype.__proto__);//Object.prototype
+        console.log(Mobile.prototype.__proto__.__proto__);// null
+
+        console.log(lg.__proto__);//Mobile.prototype
+        console.log(lg.__proto__.__proto__);//Object.prototype
+        console.log(lg.__proto__.__proto__.__proto__);// null
+
+        /* ----------------------------------- */
+
+        var Samsung = function(){
+            Mobile.call(this); // call Mobile constrctor & initialize properties
+            this.b = 20;
+        }
+        // prototype inheritance
+        Samsung.prototype = Object.create(Mobile.prototype);
+        Samsung.prototype.constructor = Samsung;
+        Samsung.prototype.z = 50;
+
+        let m = new Mobile();
+        let s = new Samsung();
+        console.log(s.a, s.b, s.z);   // 10 20 50
+
+        console.log(m.a, m.z);  // 10 100
+
+    </script>
+        <img src="images/87 prototype inheritance.jpg">
+        <img src="images/87 prototype inheritance_2.jpg">
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how prototype works</title>
+</head>
+<body>
+    <script>
+        // let function Mobile() {   }
+        let Mobile = function(){
+            this.a = 20;
+        }
+        Mobile.prototype.a = 10;
+        let lg = new Mobile();
+
+        console.log(Mobile);
+
+        console.log(Mobile.prototype);
+        console.log(lg.__proto__);
+        console.log(Mobile.prototype === lg.__proto__);//true
+
+        console.log(Mobile === lg.__proto__.constructor);//true
+        console.log(Mobile === Mobile.prototype.constructor);//true
+        /* --------------------------------------- */
+
+        console.log(lg.x);// undefined
+        console.log(lg.a);// 20
+        console.log(lg.__proto__.a);// 10
+
+    </script>
+</body>
+</html>

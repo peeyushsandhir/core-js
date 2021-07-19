@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multilevel inheritance</title>
+</head>
+<body>
+    <script>
+        // inheritance
+        let doInherit = function(c,p){
+            c.prototype = Object.create(p.prototype);
+            c.prototype.constructor = c;
+        }
+        // super class
+        let Mobile = function(){
+            this.a = 10;
+        };
+        Mobile.prototype.x = 100;
+
+        // sub class
+        let Samsung = function(){
+            Mobile.call(this);
+            this.b = 20;
+        };
+
+        let Galaxy = function(){
+            Samsung.call(this);
+            this.c = 30;
+        }
+
+        // inheritance initiated
+        doInherit(Samsung,Mobile);// samsung subclass of mobile
+        doInherit(Galaxy, Samsung);// galaxy subclass of samsung
+
+        // prototype methods
+        Samsung.prototype.y = 200;
+        Galaxy.prototype.z = 300;
+
+        // instance created
+        let m = new Mobile(); s = new Samsung(); g = new Galaxy();
+
+        console.log("galaxy: ",g.a,g.b,g.c,g.x,g.y,g.z);
+        console.log("samsung: ",s.a,s.b,s.x,s.y);
+        console.log("mobile: ",m.a,m.x);
+    </script>
+</body>
+</html>
