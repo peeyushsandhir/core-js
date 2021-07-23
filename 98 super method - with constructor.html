@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>super method - with constructro</title>
+</head>
+<body>
+    <script>
+        class Father{
+            constructor(money){
+                this.fmoney = money;
+            }
+            showfm(){
+                return 'father\'s money: '+this.fmoney;
+            }
+        }
+        class Son extends Father{
+            constructor(money, capital){
+                super(money)// always first line
+                this.cap = capital;
+            }
+            showsm(){
+                return 'son\'s money: '+this.cap;
+            }
+            showtm(){
+                return 'total money: '+(this.cap+this.fmoney);
+            }
+        }
+        let s = new Son(20000,10000);
+        console.log(s.showfm());
+        console.log(s.showsm());
+        console.log(s.showtm());
+    </script>
+</body>
+</html>

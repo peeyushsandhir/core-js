@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class expression</title>
+</head>
+<body>
+    <h1>class expression can be name or unnamed</h1>
+    <script>
+        // CLASS EXPRESSION
+        let Mobile = class Telephone{ // named expression
+        // let Mobile = class{ // un-named expression
+            constructor(model,color){
+                this.model = model;
+                this.color = color;
+            }
+            display(){
+                return this.model+' price 4000 '+this.color;
+            }
+        };
+        let n = new Mobile('3310','navy blue');
+        let s = new Mobile('galaxy','black');
+        document.write(n.model+'<br>');
+        document.write(n.color+'<br>');
+        document.write(n.display()+'<br>');
+        document.write('<br>')
+        document.write(s.model+'<br>');
+        document.write(s.color+'<br>');
+        document.write(s.display())
+    </script>
+</body>
+</html>

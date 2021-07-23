@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es class 6</title>
+</head>
+<body>
+    <script>
+        class Mobile{
+            constructor(){  // instance members
+                this.a = 'instance property';
+                var b = 'private property'
+                this.show = function(){
+                    return "instance method \n"+b;
+                }
+            }
+            display(){  // prototype members
+                return 'prototype method'
+            }
+        }
+        let nokia = new Mobile();
+        console.log(nokia.a);
+        console.log(nokia.b);
+        console.log(nokia.show());
+        console.log(nokia.display());
+    </script>
+    <img src="images/92 es 6. classjpg.png">
+</body>
+</html>

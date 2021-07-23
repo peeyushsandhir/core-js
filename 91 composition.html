@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>composition</title>
+</head>
+<body>
+    <script>
+        // mixin function
+        function mixin(target ,...rest){
+            Object.assign(target, ...rest);
+        } 
+
+        let eating = {
+            eat: () => 'I can eat'
+        };
+        let walking = {
+            walk: () => 'I can walk'
+        };
+        let talking = {
+            talk: () => 'I can talk'
+        };
+        
+        // Human class
+        let Human = function(){};
+
+        // Object.assign(Human.prototype, eating,walking,talking);
+        mixin(Human.prototype, eating,walking,talking);
+
+        let rahul = new Human();
+        let sonam = new Human();
+        let sumit = new Human();
+        console.log(rahul.eat(),rahul.walk(),rahul.talk());
+        console.log(sonam.eat(),sonam.walk(),sonam.talk());
+    </script>
+</body>
+</html>

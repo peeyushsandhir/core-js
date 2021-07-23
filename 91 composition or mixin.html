@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>composition or mixin</title>
+</head>
+<body>
+    <script>
+        let eating = {
+            eat: () => 'I can eat'
+        };
+        let walking = {
+            walk: () => 'I can walk'
+        };
+        let talking = {
+            talk: () => 'I can talk'
+        };
+        let starting = {
+            start: function(){return'booting up';}
+        };
+        
+
+        // Object.assign({target}, sources)
+        let rahul = Object.assign({}, eating, walking, talking);
+        let robo = Object.assign({}, walking, talking, starting);
+
+        console.log(rahul.eat(),rahul.walk(),rahul.talk());
+        console.log(robo.start(), robo.walk(),robo.talk());
+        // console.log(robo.eat());
+    </script>
+</body>
+</html>

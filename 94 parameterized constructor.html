@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parameterized constructor</title>
+</head>
+<body>
+    <script>
+        class Mobile{
+            constructor(model, color){
+                this.model = model;
+                this.color = color;
+            }
+            display(){
+                return this.model+' Price Rs. 3000 '+this.color;
+            }
+        }
+        let nokia = new Mobile('3310','navy blue');
+        document.write(nokia.model+'<br>');
+        document.write(nokia.color+'<br>')
+        document.write(nokia.display());
+    </script>
+</body>
+</html>

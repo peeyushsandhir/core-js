@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inheritance</title>
+</head>
+<body>
+    <script>
+        class Father{
+            fMoney(){
+                return "father's money \n";
+            }
+        }
+        class Son extends Father{
+            sMoney(){
+                return "son's money \n";
+            }
+        }
+        class GrandSon extends Son{
+            gsMoney(){
+                return "grand son's money \n";
+            }
+        }
+        let s = new Son(); f = new Father();
+        let gs = new GrandSon();
+        console.log(f.fMoney());
+        console.log(s.sMoney(), s.fMoney());
+        console.log(gs.fMoney(), gs.sMoney(), gs.gsMoney());
+    </script>
+    <img src="images/97 class inheritace.jpg">
+</body>
+</html>

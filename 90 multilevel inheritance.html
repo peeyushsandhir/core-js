@@ -19,12 +19,12 @@
         };
         Mobile.prototype.x = 100;
 
-        // sub class
+        // sub class of Mobile
         let Samsung = function(){
             Mobile.call(this);
             this.b = 20;
         };
-
+        // sub class of Samsung
         let Galaxy = function(){
             Samsung.call(this);
             this.c = 30;
